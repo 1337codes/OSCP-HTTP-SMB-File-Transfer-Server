@@ -1,5 +1,13 @@
 # DualServe — Enhanced HTTP & SMB File Transfer Server
 
+sudo pacman -S impacket python-pip
+pip install --user --break-system-packages legacy-cgi
+git clone https://github.com/1337codes/OSCP-HTTP-SMB-File-Transfer-Server
+cd OSCP-HTTP-SMB-File-Transfer-Server
+sed -i 's|/home/alien/Desktop/OSCP/Tools|'"$HOME"'/oscp/tools|' tools.py
+mkdir -p ~/oscp/tools
+sudo python tools.py -smb        # or:  python tools.py -p 8080 -sp 4445 -smb
+
 A lightweight Python file transfer server for **authorized lab, internal admin, and pentest environments** that supports:
 
 - HTTP file hosting and uploads
